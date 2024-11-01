@@ -1,0 +1,27 @@
+// coming from FormInputField
+
+type FormInputs = {
+  email: string;
+ // password: string;          todo = solve ts error
+};
+
+
+// highlight the available dates 
+    Day: ({ date }) => {
+          // Determine if the date is available
+          const isAvailable = modifiers.availableDay(date);
+          return (
+            <button
+              className={cn(
+                buttonVariants({ variant: "ghost" }),
+                "h-10 w-10 p-0 font-normal aria-selected:opacity-100 hover:bg-button-clr-700/50 hover:text-white rounded-full p-3",
+                {
+                  'bg-button-clr-700/50 text-white': isAvailable, // Apply background for available days
+                }
+              )}
+              // Add other necessary attributes or event handlers here
+            >
+              {date.getDate()}
+            </button>
+          );
+        },
